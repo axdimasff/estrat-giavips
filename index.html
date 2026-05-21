@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estratégia VIP - Acesso Imediato</title>
+    <style>
+        :root {
+            --primary: #8a2be2;
+            --secondary: #00f2ff;
+            --dark: #0a0b10;
+            --card: #161b22;
+            --text: #ffffff;
+            --accent: #ffcc00;
+            --gold: #ffaa00;
+            --green: #25d366;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--dark);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 450px;
+            padding: 25px;
+            background: var(--card);
+            border-radius: 24px;
+            box-shadow: 0 0 40px rgba(138, 43, 226, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-area {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header-area h1 {
+            font-size: 2rem;
+            background: linear-gradient(to right, #ff007f, var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            font-weight: 800;
+        }
+
+        .intro-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #b3b9c1;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 3px solid #ff007f;
+            margin-bottom: 25px;
+        }
+
+        .plan-card {
+            background: rgba(10, 11, 16, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .plan-card.premium-card {
+            border: 1px solid rgba(255, 170, 0, 0.4);
+            background: linear-gradient(145deg, rgba(22, 27, 34, 0.9), rgba(255, 170, 0, 0.03));
+        }
+
+        .plan-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .plan-name { font-weight: 800; font-size: 1rem; text-transform: uppercase; }
+        .plan-name.basic { color: var(--secondary); }
+        .plan-name.premium { color: var(--gold); }
+
+        .plan-price {
+            font-weight: 900;
+            font-size: 1.2rem;
+            background: rgba(255,255,255,0.05);
+            padding: 4px 10px;
+            border-radius: 8px;
+        }
+        .premium .plan-price { color: var(--gold); background: rgba(255, 170, 0, 0.1); }
+
+        .plan-features {
+            font-size: 0.85rem;
+            color: #a3a8b4;
+            margin: 0 0 12px 0;
+            padding-left: 18px;
+            line-height: 1.4;
+        }
+
+        .btn-select {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            color: #fff;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border-radius: 30px;
+            text-transform: uppercase;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .plan-card:hover .btn-select { background: var(--primary); border-color: var(--primary); }
+        .premium-card:hover .btn-select { background: var(--gold); border-color: var(--gold); color: #000; }
+
+        .payment-divider {
+            margin: 25px 0 15px 0;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(0, 242, 255, 0.4), transparent);
+        }
+
+        .payment-box {
+            display: none;
+            background: #1f242c;
+            border: 2px solid var(--secondary);
+            border-radius: 14px;
+            padding: 18px;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .payment-box h3 { margin: 0 0 12px 0; font-size: 1.1rem; color: var(--accent); text-align: center; text-transform: uppercase; }
+
+        .payment-details {
+            background: rgba(0,0,0,0.3);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .btn-whatsapp {
+            display: block;
+            background: var(--green);
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 14px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-area">
+        <h1>Acesso Estratégia VIP</h1>
+    </div>
+
+    <div class="intro-text">
+        🔒 <b>O que você está adquirindo?</b><br>
+        Você vai ter acesso ao meu método passo a passo detalhado para gerar renda todos os dias usando apenas o seu telemóvel e internet. Sem segredos, com estratégias prontas que funcionam no mercado de Moçambique. Escolha abaixo o plano que melhor se adapta ao seu objetivo.
+    </div>
+
+    <div class="plan-card">
+        <div class="plan-header">
+            <span class="plan-name basic">Plano Básico</span>
+            <span class="plan-price">250 MT</span>
+        </div>
+        <ul class="plan-features">
+            <li>E-book com o meu método real de atração</li>
+            <li>Estratégia completa de vendas passo a passo</li>
+            <li>Links prioritários de subafiliados incluídos</li>
+        </ul>
+        <button class="btn-select" onclick="showPayment('Básico', '250 MT', 'BASICO')">Escolher Básico</button>
+    </div>
+
+    <div class="plan-card premium-card">
+        <div class="plan-header">
+            <span class="plan-name premium">👑 Combo Premium</span>
+            <span class="plan-price">450 MT</span>
+        </div>
+        <ul class="plan-features">
+            <li><b>Tudo</b> do Plano Básico</li>
+            <li>Meus <b>Scripts Prontos</b> de mensagens (Copy)</li>
+            <li>Estratégias secretas para faturar no <b>Gemgala</b></li>
+            <li>Guia de análise e minutos pagãos do <b>Aviator</b></li>
+        </ul>
+        <button class="btn-select" onclick="showPayment('Premium', '450 MT', 'PREMIUM')">Escolher Premium</button>
+    </div>
+
+    <hr class="payment-divider" id="paymentDivider" style="display: none;">
+
+    <div class="payment-box" id="paymentBox">
+        <h3 id="paymentTitle">Dados de Pagamento</h3>
+        <div class="payment-details">
+            📌 <b>CONTA PARA ENVIAR:</b><br>
+            🇲🇿 <b>M-Pesa:</b> 84XXXXXXX (Nome: Seu Nome)<br>
+            🇲🇿 <b>e-Mola:</b> 86XXXXXXX (Nome: Seu Nome)<br>
+            💵 <b>Valor exato:</b> <span id="paymentValue" style="font-weight:900; color:var(--accent);">250 MT</span>
+        </div>
+        <p style="font-size:0.85rem; margin-bottom:12px; color:#a3a8b4;">⚠️ Efetue o depósito ou transferência e clique abaixo para enviar o comprovativo.</p>
+        <a href="#" id="whatsappLink" target="_blank" class="btn-whatsapp">✅ JÁ PAGUEI, MANDAR PRINT</a>
+    </div>
+</div>
+
+<script>
+    function showPayment(planName, price, textUrl) {
+        // Altere o número abaixo para o teu WhatsApp real (com 258)
+        var seuWhatsApp = "258840000000"; 
+        
+        var box = document.getElementById('paymentBox');
+        var divider = document.getElementById('paymentDivider');
+        var title = document.getElementById('paymentTitle');
+        var valueSpan = document.getElementById('paymentValue');
+        var waLink = document.getElementById('whatsappLink');
+        
+        title.innerHTML = "Pagamento do Plano " + planName;
+        valueSpan.innerHTML = price;
+        
+        var mensagem = "Olá! Já fiz o pagamento de " + price + " referente ao Plano " + textUrl + ". Segue em anexo o print do comprovativo.";
+        var urlFinal = "https://wa.me/" + seuWhatsApp + "?text=" + encodeURIComponent(mensagem);
+        
+        waLink.href = urlFinal;
+        
+        divider.style.display = 'block';
+        box.style.display = 'block';
+        
+        setTimeout(function() {
+            box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+    }
+</script>
+
+</body>
+</html>
