@@ -186,20 +186,20 @@
     <div class="plan-card">
         <div class="plan-header">
             <span class="plan-name basic">Plano Básico</span>
-            <span class="plan-price">250 MT</span>
+            <span class="plan-price">299 MT</span>
         </div>
         <ul class="plan-features">
             <li>E-book com o meu método real de atração</li>
             <li>Estratégia completa de vendas passo a passo</li>
             <li>Links prioritários de subafiliados incluídos</li>
         </ul>
-        <button class="btn-select" onclick="showPayment('Básico', '250 MT', 'BASICO')">Escolher Básico</button>
+        <button class="btn-select" onclick="showPayment('Básico', '299 MT', 'BASICO')">Escolher Básico</button>
     </div>
 
     <div class="plan-card premium-card">
         <div class="plan-header">
             <span class="plan-name premium">👑 Combo Premium</span>
-            <span class="plan-price">450 MT</span>
+            <span class="plan-price">499 MT</span>
         </div>
         <ul class="plan-features">
             <li><b>Tudo</b> do Plano Básico</li>
@@ -207,7 +207,7 @@
             <li>Estratégias secretas para faturar no <b>Gemgala</b></li>
             <li>Guia de análise e minutos pagãos do <b>Aviator</b></li>
         </ul>
-        <button class="btn-select" onclick="showPayment('Premium', '450 MT', 'PREMIUM')">Escolher Premium</button>
+        <button class="btn-select" onclick="showPayment('Premium', '499 MT', 'PREMIUM')">Escolher Premium</button>
     </div>
 
     <hr class="payment-divider" id="paymentDivider" style="display: none;">
@@ -216,9 +216,8 @@
         <h3 id="paymentTitle">Dados de Pagamento</h3>
         <div class="payment-details">
             📌 <b>CONTA PARA ENVIAR:</b><br>
-            🇲🇿 <b>M-Pesa:</b> 84XXXXXXX (Nome: Seu Nome)<br>
-            🇲🇿 <b>e-Mola:</b> 86XXXXXXX (Nome: Seu Nome)<br>
-            💵 <b>Valor exato:</b> <span id="paymentValue" style="font-weight:900; color:var(--accent);">250 MT</span>
+            🇲🇿 <b>e-Mola:</b> 872500557 <br><b>NOME</b>: IRENE ORLANDO PINHEIRO<br>
+            💵 <b>Valor exato:</b> <span id="paymentValue" style="font-weight:900; color:var(--accent);">299 MT</span>
         </div>
         <p style="font-size:0.85rem; margin-bottom:12px; color:#a3a8b4;">⚠️ Efetue o depósito ou transferência e clique abaixo para enviar o comprovativo.</p>
         <a href="#" id="whatsappLink" target="_blank" class="btn-whatsapp">✅ JÁ PAGUEI, MANDAR PRINT</a>
@@ -228,7 +227,7 @@
 <script>
     function showPayment(planName, price, textUrl) {
         // Altere o número abaixo para o teu WhatsApp real (com 258)
-        var seuWhatsApp = "258840000000"; 
+        var seuWhatsApp = "844669728"; 
         
         var box = document.getElementById('paymentBox');
         var divider = document.getElementById('paymentDivider');
@@ -240,7 +239,7 @@
         valueSpan.innerHTML = price;
         
         var mensagem = "Olá! Já fiz o pagamento de " + price + " referente ao Plano " + textUrl + ". Segue em anexo o print do comprovativo.";
-        var urlFinal = "https://wa.me/" + seuWhatsApp + "?text=" + encodeURIComponent(mensagem);
+        var urlFinal = "https://wa.me/" +258844669728 + "?text=" + encodeURIComponent(mensagem);
         
         waLink.href = urlFinal;
         
